@@ -1,7 +1,6 @@
-from typing import Union
-import re
-from .masks import get_mask_card_number, get_mask_account
 from datetime import datetime
+
+from .masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(data_string: str) -> str:
@@ -11,7 +10,7 @@ def mask_account_card(data_string: str) -> str:
     """
     # Шаг 1: Разделяем строку на название и номер.
     # Номер всегда идет в конце строки.
-    parts = data_string.rsplit(' ', 1)
+    parts = data_string.rsplit(" ", 1)
 
     # Проверка: если в строке только одно слово, значит, номер отсутствует
     if len(parts) == 1 or not parts[-1].isdigit():
@@ -21,7 +20,7 @@ def mask_account_card(data_string: str) -> str:
     number_part = parts[-1]
 
     # Шаг 2: Определяем, что это: карта или счет?
-    if name_part.lower().startswith('счет'):
+    if name_part.lower().startswith("счет"):
         # Это счет. Используем функцию маскировки счета.
         masked_number = get_mask_account(number_part)
 
@@ -31,7 +30,6 @@ def mask_account_card(data_string: str) -> str:
 
     # Шаг 3: Собираем финальную строку
     return f"{name_part} {masked_number}"
-
 
 
 def get_date(date_str: str) -> str:
@@ -44,5 +42,3 @@ def get_date(date_str: str) -> str:
 
     # 2. Форматируем дату в нужный вид (strftime)
     return date_obj.strftime("%d.%m.%Y")
-
-
