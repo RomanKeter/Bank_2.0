@@ -1,0 +1,19 @@
+from typing import Any, Dict, List
+
+
+def filter_by_state(data: List[Dict[str, Any]], state: str = "EXECUTED") -> List[Dict[str, Any]]:
+    """
+    Фильтрует список словарей по значению ключа 'state'.
+    """
+    filtered_data = []
+    for item in data:
+        if item.get("state") == state:
+            filtered_data.append(item)
+    return filtered_data
+
+
+def sort_by_date(data: List[Dict[str, Any]], reverse: bool = True) -> List[Dict[str, Any]]:
+    """
+    Сортирует список словарей по дате (ключ 'date').
+    """
+    return sorted(data, key=lambda x: x["date"], reverse=reverse)
