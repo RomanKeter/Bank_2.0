@@ -1,15 +1,18 @@
 [project]
 name = "banking-widget"
 version = "0.1.0"
-description = ""
+description = "Виджет банковских операций"
 authors = [
-    {name = "RomanKeter",email = "roman3tarot@gmail.com"}
+    {name = "RomanKeter", email = "roman3tarot@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
 ]
 
+[tool.poetry]
+# ВАЖНО: Эта строка говорит, что весь код лежит просто в папке src
+packages = [{include = "src"}]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
