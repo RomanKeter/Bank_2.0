@@ -5,5 +5,5 @@
 Умеет маскировать номера и форматировать даты.
 
 ## Установка
-1. Клонируйте репозиторий: git clone git@github.com:RomanKeter/Banking_widget.git
+1. Клонируйте репозиторий: git clone git@github.com:RomanKeter/bank_2.0.git
 2. Установите зависимости: poetry install
