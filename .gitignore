@@ -4,3 +4,6 @@ venv/
 __pycache__/
 *.pyc
 .env
+htmlcov/
+.coverage
+.pytest_cache/
